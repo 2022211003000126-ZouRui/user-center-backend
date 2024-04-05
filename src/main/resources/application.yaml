@@ -1,0 +1,27 @@
+# server配置
+server:
+  servlet:
+    port: 8080
+    context-path: /api
+
+# 连接池配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql:///zourui
+      username: root
+      password: 151212
+      driver-class-name: com.mysql.cj.jdbc.Driver
+#session 失效时间，这里设置为1天
+session:
+   timeout: 564654644
+# mybatis-plus的配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      logic-delete-field: isDelete  #全局逻辑删除字段名
+      logic-delete-value: 1  #逻辑已删除值，默认为1
+      logic-not-delete-value: 0 #逻辑未删除值，默认为0
